@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const MemeSelector = () => {
-    // Declare state variables using the useState hook
+    // Declare state variables using the useState hook as an array/string
 const [memeImages, setMemeImages] = useState([]);
 const [selectedMeme, setSelectedMeme] = useState({});
 const [text1, setText1] = useState('');
@@ -11,7 +11,7 @@ const [memeUrl, setMemeUrl] = useState('');
 
 useEffect(() => {
   // Make a GET request to the Imgflip API to fetch the list of meme images
-  axios({
+  axios.get({
     url: "https://api.imgflip.com/get_memes",
     method: "GET",
     dataResponse: "json",
@@ -43,7 +43,6 @@ return(
 <>
 <div className="memeForm">
 <form onSubmit={handleSubmit}>
-  {/* Select meme image */}
   <label>
     Select a meme image:
     <select value={selectedMeme.id} onChange={(event) => {

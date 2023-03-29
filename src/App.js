@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import MemeSelector from './components/MemeSelector.js';
+import DocumentTitle from './components/Title';
 
 function App() {
+<DocumentTitle />
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>Meme Generator</h1>
       </header>
+      <section>
+        
+      <MemeSelector />
+        
+      </section>
+      <footer>
+        <p>Created at <a href='https://junocollege.com/'>Juno College</a></p>
+      </footer>
     </div>
+    
   );
 }
 
 export default App;
+// imgflip user and password for post param 
+// user: terryfox231
+// pass: bananabutt123
+
+// split form into two requests, one for selecting meme template and another for submitting the inputted caption

@@ -11,7 +11,7 @@ const [memeUrl, setMemeUrl] = useState('');
 
 useEffect(() => {
   // Make a GET request to the Imgflip API to fetch the list of meme images
-  axios.get({
+  axios({
     url: "https://api.imgflip.com/get_memes",
     method: "GET",
     dataResponse: "json",
@@ -53,7 +53,7 @@ return(
     
       <option value="">--Select a meme--</option>
       {memeImages.map((meme) => (
-        <option value={meme.id} key={meme.id} class="dropDownList">
+        <option value={meme.id} key={meme.id} className="dropDownList">
           {meme.name}
         </option>
     

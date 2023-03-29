@@ -54,35 +54,8 @@ footer {
     width: 100vw;
     color: black;
 }
-.dropDownList{
-  font-size: 13px;
-  padding: 10px 8px 10px 14px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  overflow: hidden;
-  position: relative;
-}
-
-.dropDownList .select{
-  width: 120%;
-  background:"V" no-repeat;
-  background-position:80% center;
-}
-
-.dropDownList .select select{
-  background: transparent;
-  line-height: 1;
-  border: 0;
-  padding: 0;
-  border-radius: 0;
-  width: 120%;
-  position: relative;
-  z-index: 10;
-  font-size: 1em;
-}
 .memeForm {
   border-style: solid;
   border-width: 5px;
-  border-radius: 3%;
+  border-top: 2%;
 }

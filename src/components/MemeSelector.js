@@ -1,14 +1,16 @@
+// Import necessary modules
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+// Define functional component
 const MemeSelector = () => {
-    // Declare state variables using the useState hook as an array/string
+    // Declare state variables using the useState hook as an empty array/string
 const [memeImages, setMemeImages] = useState([]);
 const [selectedMeme, setSelectedMeme] = useState({});
 const [text1, setText1] = useState('');
 const [text2, setText2] = useState('');
 const [memeUrl, setMemeUrl] = useState('');
-
+// useEffect hook to fetch the list of meme images on component mount
 useEffect(() => {
   // Make a GET request to the Imgflip API to fetch the list of meme images
   axios({
@@ -18,14 +20,15 @@ useEffect(() => {
   }).then((res) => {
     // Set the state variable for meme images to the array of memes in the response data
     setMemeImages(res.data.data.memes);
-    console.log(res);
   });
 }, []);
 
 // Handle form submission for editing captions
 const handleSubmit = (event) => {
   event.preventDefault();
+  // Create URLSearchParams object to send as POST request parameters
   const params = new URLSearchParams();
+  // appended necessary parameteres for caption post request as per imgflip documentation: https://imgflip.com/api
   params.append('template_id', selectedMeme.id);
   params.append('username', 'terryfox231');
   params.append('password', 'bananabutt123');
@@ -39,19 +42,21 @@ const handleSubmit = (event) => {
       setMemeUrl(res.data.data.url);
     });
 };
+// render the component
 return(
 <>
 <div className="memeForm">
 <form onSubmit={handleSubmit}>
   <label>
     Select a meme image:
+    {/* displays a dropdown list menu and makes it so that the current selected value is the selectedMeme always*/}
     <select value={selectedMeme.id} onChange={(event) => {
       const id = event.target.value;
       const selected = memeImages.find((meme) => meme.id === id);
       setSelectedMeme(selected);
-    }}>
-    
-      <option value="">--Select a meme--</option>
+    }}> 
+    {/* memeImages array populates the dropdown menu using map method*/}
+      <option>--Select a meme--</option>
       {memeImages.map((meme) => (
         <option value={meme.id} key={meme.id} className="dropDownList">
           {meme.name}
@@ -84,7 +89,5 @@ return(
 </>
 );
 }
-
-
-
+// export the component
 export default MemeSelector;

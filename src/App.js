@@ -10,7 +10,6 @@ function App() {
         <h1>Meme Generator</h1>
       </header>
       <section>
-        
       <MemeSelector />
         
       </section>
@@ -26,5 +25,3 @@ export default App;
 // imgflip user and password for post param 
 // user: terryfox231
 // pass: bananabutt123
-
-// split form into two requests, one for selecting meme template and another for submitting the inputted caption

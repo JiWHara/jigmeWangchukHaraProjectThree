@@ -23,6 +23,7 @@ img {
   border-style: solid;
   border-width: 5px;
   border-radius: 3%;
+  height: 0 auto;
 }
 div.memeForm {
   display:flex;
@@ -45,7 +46,8 @@ button{
   border-radius: 4%;
 }
 footer {
-  position: absolute;
+  display:block;
+  position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -53,9 +55,96 @@ footer {
     height: auto;
     width: 100vw;
     color: black;
+    margin-top:10%;
 }
 .memeForm {
   border-style: solid;
   border-width: 5px;
   border-top: 2%;
 }
+/*Media Queries*/
+@media (max-width: 430px) {
+  html{
+    font-size: 120%;
+  }
+  img {
+    width: 80%;
+    height: 0 auto;
+  }
+  select{
+    width:75%;
+  }
+}
+@media (min-width: 430px) and (max-width: 499px) {
+  html{
+    font-size: 120%;
+  }
+  img {
+    width: 70%;
+    height: 0 auto;
+  }
+  select{
+    width:75%;
+  }
+}
+@media (min-width: 500px) and (max-width: 599px) {
+  html{
+    font-size: 120%;
+  }
+  img {
+    width: 62%;
+    height: 0 auto;
+  }
+  select{
+    width:75%;
+  }
+}
+@media (min-width: 600px) and (max-width: 699px) {
+  html{
+    font-size: 120%;
+  }
+  img {
+    width: 55%;
+    height: 0 auto;
+  }
+  select{
+    width:75%;
+  }
+}
+@media (min-width: 700px) and (max-width: 799px) {
+  html{
+    font-size: 120%;
+  }
+  img {
+    width: 46%;
+    height: 0 auto;
+  }
+  select{
+    width:75%;
+  }
+}
+@media (min-width: 800px) and (max-width: 899px) {
+  html{
+    font-size: 120%;
+  }
+  img {
+    width: 42%;
+    height: 0 auto;
+  }
+  select{
+    width:75%;
+  }
+}
+@media (min-width: 900px) and (max-width: 999px) {
+  html{
+    font-size: 120%;
+  }
+  img {
+    width: 38%;
+    height: 0 auto;
+  }
+  select{
+    width:75%;
+  }
+}
+

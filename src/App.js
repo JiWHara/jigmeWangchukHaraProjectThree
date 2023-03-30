@@ -10,6 +10,7 @@ function App() {
         <h1>Meme Generator</h1>
       </header>
       <section>
+        
       <MemeSelector />
         
       </section>
